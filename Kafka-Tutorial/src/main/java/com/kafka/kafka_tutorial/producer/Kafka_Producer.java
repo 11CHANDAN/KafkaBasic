@@ -25,6 +25,7 @@ public class Kafka_Producer {
 	}
 	
 	public void sendJsonMessage(User user) {
+		LOGGER.info("start of sendJsonMessage()");
 		LOGGER.info("User object {}",user.toString());
 		Message<User> message = MessageBuilder.withPayload(user).setHeader(KafkaHeaders.TOPIC, "myTopic").build();
 		kafkaTemplate.send(message);
