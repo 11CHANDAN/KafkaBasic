@@ -1,1 +1,1 @@
-In this project we make basic configuration for kafka  
+This project contains basic kafka changes
