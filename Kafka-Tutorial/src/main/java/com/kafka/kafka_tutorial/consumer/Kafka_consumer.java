@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import com.kafka.kafka_tutorial.model.User;
+
 @Service
 public class Kafka_consumer {
 	
@@ -14,4 +16,11 @@ public class Kafka_consumer {
 	public void consumer(String message) {
 		LOGGER.info("Meesage Received -> {}",message);
 	}
+	
+	@KafkaListener(topics = "myTopic_json" , groupId = "myGroup")
+	public void jsonKafkaConsumer(User user) {
+		LOGGER.info("Meesage Received -> {}",user.toString());
+	}
 }
+
+
