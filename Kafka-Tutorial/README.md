@@ -1,0 +1,1 @@
+In this project we make basic configuration for kafka  
